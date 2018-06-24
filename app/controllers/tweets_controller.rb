@@ -18,7 +18,6 @@ class TweetsController < ApplicationController
   end
 
   post '/tweets/new' do
-    binding.pry
     @tweet = Tweet.create(params)
     @tweet.user_id = current_user.id
 
