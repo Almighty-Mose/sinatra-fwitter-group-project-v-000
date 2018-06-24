@@ -13,7 +13,12 @@ class UsersController < ApplicationController
 
   post '/signup' do
     if !params[:username].empty? && !params[:email].empty? && !params[:password].empty?
-      @user = User.create(params)
+      if !@user.find_by(params[:username])
+        @user = User.create(params)
+      else
+        "This User Already Exists!"
+
+        redirect '/signup'
     else
       redirect '/signup'
     end
