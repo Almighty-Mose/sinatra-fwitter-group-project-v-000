@@ -1,3 +1,4 @@
+require 'pry'
 class TweetsController < ApplicationController
   get '/tweets' do
     if logged_in?
@@ -17,6 +18,7 @@ class TweetsController < ApplicationController
   end
 
   post '/tweets/new' do
+    binding.pry
     @tweet = Tweet.create(params[:content])
     @tweet.user_id = current_user.id
 
