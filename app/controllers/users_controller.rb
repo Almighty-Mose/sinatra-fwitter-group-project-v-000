@@ -11,4 +11,7 @@ class UsersController < ApplicationController
     erb :'tweets/tweets'
   end
 
+  post '/signup' do
+    @user = User.create(params)
+  end
 end
