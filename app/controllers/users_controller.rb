@@ -19,6 +19,8 @@ class UsersController < ApplicationController
         "This User Already Exists!"
 
         redirect '/signup'
+      end
+      
     else
       redirect '/signup'
     end
