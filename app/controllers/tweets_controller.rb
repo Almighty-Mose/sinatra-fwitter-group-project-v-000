@@ -22,9 +22,10 @@ class TweetsController < ApplicationController
       @tweet = Tweet.create(params)
       @tweet.user_id = current_user.id
       @tweet.save
+
+      redirect '/tweets'
     else
       redirect '/tweets/new'
     end
-    redirect '/tweets'
   end
 end
