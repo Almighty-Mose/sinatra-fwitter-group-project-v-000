@@ -13,5 +13,7 @@ class UsersController < ApplicationController
 
   post '/signup' do
     @user = User.create(params)
+
+    redirect '/tweets'
   end
 end
