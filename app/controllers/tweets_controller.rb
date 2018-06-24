@@ -49,6 +49,14 @@ class TweetsController < ApplicationController
     end
   end
 
+  patch '/tweets/:id/edit' do
+    @tweet = Tweet.find_by_id(params[:id])
+    @tweet.update(params)
+    @tweet.save
+
+    redirect '/tweets'
+  end
+
   delete '/tweets/:id/delete' do
     if logged_in?
       @tweet = Tweet.find_by_id(params[:id])
