@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 
         redirect '/signup'
       end
-      
+
     else
       redirect '/signup'
     end
