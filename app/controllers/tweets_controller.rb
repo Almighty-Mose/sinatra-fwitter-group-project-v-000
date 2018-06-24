@@ -16,4 +16,8 @@ class TweetsController < ApplicationController
     end
   end
 
+  post '/tweets/new' do
+    @tweet = Tweet.create(params[:content])
+    @tweet.user_id = current_user.id
+  end
 end
