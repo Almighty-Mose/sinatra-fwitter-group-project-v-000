@@ -11,10 +11,6 @@ class UsersController < ApplicationController
     erb :'users/login'
   end
 
-  get '/tweets' do
-    erb :'tweets/tweets'
-  end
-
   post '/signup' do
     if !params[:username].empty? && !params[:email].empty? && !params[:password].empty?
       @user = User.create(params)
