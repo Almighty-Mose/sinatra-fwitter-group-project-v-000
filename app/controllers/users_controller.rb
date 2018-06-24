@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
   get '/signup' do
     erb :'users/create_user'
-
-    redirect "/tweets"
   end
 
   get '/login' do
@@ -10,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   get '/tweets' do
-    erb :'tweets/tweets.erb'
+    erb :'tweets/tweets'
   end
 
 end
