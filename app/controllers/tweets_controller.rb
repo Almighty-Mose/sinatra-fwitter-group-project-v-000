@@ -19,7 +19,7 @@ class TweetsController < ApplicationController
 
   post '/tweets/new' do
     binding.pry
-    @tweet = Tweet.create(params[:content])
+    @tweet = Tweet.create(params)
     @tweet.user_id = current_user.id
 
     redirect '/tweets'
