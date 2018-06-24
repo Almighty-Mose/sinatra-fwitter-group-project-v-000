@@ -12,7 +12,11 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
-    @user = User.create(params)
+    if !params[:username].empty?
+      @user = User.create(params)
+    else
+      redirect '/signup'
+    end
 
     redirect '/tweets'
   end
